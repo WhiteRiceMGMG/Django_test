@@ -15,7 +15,7 @@ class BlogPost(models.Model):
         verbose_name='本文'
     )
     
-    posted_at = models.DataTimeField(
+    posted_at = models.DateTimeField(
         verbose_name = '投稿日時',
         auto_now_add = True
     )
@@ -23,7 +23,7 @@ class BlogPost(models.Model):
     category = models.CharField(
         verbose_name = 'カテゴリ',
         max_length = 50,
-        auto_now_add = True
+        choices = CATEGORY
     )
      
     def __str__(self):
